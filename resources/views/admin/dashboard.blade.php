@@ -15,6 +15,8 @@
                         @endif
 
                         {{ __('You are logged in!') }}
+                        <h1>ciao {{Auth::user()->name}}</h1>
+                        <p>la tua email è {{Auth::user()->email}}</p>
                     </div>
                 </div>
             </div>
