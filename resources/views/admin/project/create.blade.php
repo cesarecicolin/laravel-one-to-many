@@ -38,6 +38,17 @@
                 <input type="file" class="form-control" id="image" name="image">
             </div>
 
+            <div class="mb-3">
+                <label for="type">scegli la tipologia</label>
+                <select name="type_id" id="type">
+                    <option value="">nessuna</option>
+                    @foreach ($types as  $type)
+                    <option value="{{$type->id}}">{{$type->name}}</option>
+                        
+                    @endforeach
+                </select>
+            </div>
+
             <button class="btn btn-success" type="submit">Save</button>
 
 

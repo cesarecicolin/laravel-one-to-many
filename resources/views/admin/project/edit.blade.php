@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container mt-5">
-       
+
         <div class="mb-3 has-validation">
             <form action="{{ route('admin.projects.update', ['project' => $project->slug]) }} " method="POST">
                 @csrf
@@ -18,7 +18,19 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" name="description" rows="3">{{ old('description' ,$project->title) }}</textarea>
+            <textarea class="form-control" id="description" name="description" rows="3">{{ old('description', $project->title) }}</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="type">seleziona tipologia</label>
+            <select name="type_id" id="type">
+                <option  value="">nessuna</option>
+
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+            </select>
+
         </div>
         <button class="btn btn-success" type="submit">Save</button>
         </form>
