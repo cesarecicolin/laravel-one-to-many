@@ -3,6 +3,8 @@
     <div class="container mt-5">
         <h2>{{$project->title}}</h2>
 
+        <p>{{$project->type?->name}}</p>
+
         <div>
             <img src="{{asset('storage/' .$project->image)}}" alt="">
         </div>
